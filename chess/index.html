@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>纯前端国际象棋 (支持AI人机对战)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="main-menu" class="container">
+    <h1>国际象棋 Web 增强版</h1>
+    
+    <div class="menu-card">
+        <h3>选择游戏模式</h3>
+        
+        <button class="btn btn-primary" onclick="startGame('pvp')">🙋‍♂️ 双人对战 (本地)</button>
+        
+        <div class="divider"></div>
+        
+        <h3>人机对战</h3>
+        <select id="ai-difficulty" class="difficulty-select">
+            <option value="1">初级 (看1步，快速)</option>
+            <option value="2" selected>中级 (看2步，推荐)</option>
+            <option value="3">高级 (看3步，思考需几秒)</option>
+        </select>
+        <button class="btn btn-danger" onclick="startGame('pve')">🤖 挑战 AI (你执白棋)</button>
+    </div>
+</div>
+
+<div id="game-container" class="container" style="display: none;">
+    <h1>国际象棋</h1>
+    
+    <div class="status-panel">
+        <span id="turn-icon" class="turn-indicator turn-white"></span>
+        <span id="game-status" class="status-text">轮到白方下子</span>
+    </div>
+
+    <div class="board-wrapper">
+        <div id="chessboard" class="board"></div>
+    </div>
+
+    <button id="reset-btn" class="btn btn-secondary">返回主菜单</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
